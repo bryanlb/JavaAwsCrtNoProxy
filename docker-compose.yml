@@ -4,14 +4,6 @@ services:
     build: .
 
   squid-proxy:
-    image: sameersbn/squid:latest
-    container_name: squid-proxy
+    image: ubuntu/squid:5.2-22.04_beta
     ports:
     - "3128:3128"
-    volumes:
-    - /path/to/squid/cache:/var/spool/squid
-    environment:
-    - SQUID_CACHE_SIZE=10000
-    - SQUID_CACHE_MEM=256
-    - SQUID_VISIBLE_HOSTNAME=proxy.example.com
-    restart: always

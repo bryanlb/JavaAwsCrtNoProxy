@@ -24,6 +24,7 @@ public class Main {
                                 S3CrtHttpConfiguration.builder()
                                         .proxyConfiguration(
                                                 S3CrtProxyConfiguration.builder()
+                                                  .scheme("http")
                                                         .host("squid-proxy")
                                                         .port(3128)
                                                         .build())
