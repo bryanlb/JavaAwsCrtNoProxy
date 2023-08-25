@@ -24,7 +24,8 @@ public class Main {
                                 S3CrtHttpConfiguration.builder()
                                         .proxyConfiguration(
                                                 S3CrtProxyConfiguration.builder()
-                                                        .useSystemPropertyValues(false)
+                                                        .host("squid-proxy")
+                                                        .port(3128)
                                                         .build())
                                         .build())
                         .targetThroughputInGbps(1D)

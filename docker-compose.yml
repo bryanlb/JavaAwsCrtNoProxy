@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  java-stuff:
+    build: .
+
+  squid-proxy:
+    image: sameersbn/squid:latest
+    container_name: squid-proxy
+    ports:
+    - "3128:3128"
+    volumes:
+    - /path/to/squid/cache:/var/spool/squid
+    environment:
+    - SQUID_CACHE_SIZE=10000
+    - SQUID_CACHE_MEM=256
+    - SQUID_VISIBLE_HOSTNAME=proxy.example.com
+    restart: always
